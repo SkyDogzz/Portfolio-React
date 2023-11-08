@@ -30,8 +30,8 @@ const StyledHeader = styled.header`
             font-weight: 300;
 
             &:hover {
-                text-decoration: underline;
-                }
+                text-decoration: underline;    
+              }
             }
           }
         }

@@ -3,9 +3,10 @@ import styled from "styled-components";
 const StyledHero = styled.section`
   height: 60vh;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   background: var(--background-color);
+  padding: 0 var(--offset);
 
   .hero-content {
     h1 {

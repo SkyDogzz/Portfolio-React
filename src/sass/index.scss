@@ -4,3 +4,15 @@
 
 @import './variables';
 
+
+body,
+html {
+  cursor: none;
+
+  a,
+  button,
+  input,
+  textarea {
+    cursor: none;
+  }
+}
