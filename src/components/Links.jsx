@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ClearButton } from "./Button";
 
 const links = {
   Github: "https://github.com/skydogzz",
@@ -38,11 +39,12 @@ const StyledLinks = styled.div`
 
 export default function Links() {
   return (
-    <StyledLinks className="Links">
-      <ul>
+    <StyledLinks className="Links"><ul>
         {Object.keys(links).map((link, index) => (
           <li key={index}>
-            <a href={links[link]} target="_blank">{link}</a>
+            <a href={links[link]} target="_blank" rel="noreferrer" >
+            <ClearButton text={link}></ClearButton>
+            </a>
           </li>
         ))}
       </ul>
