@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const links = {
   Github: "https://github.com/skydogzz",
-  LinkedIn: "https://www.linkedin.com/in/skydogzz/",
+  LinkedIn: "https://www.linkedin.com/in/thomas-stephan-8376b6172/",
   Email: "mailto:thomas.stephan@live.fr",
 };
 
@@ -42,7 +42,7 @@ export default function Links() {
       <ul>
         {Object.keys(links).map((link, index) => (
           <li key={index}>
-            <a href={links[link]}>{link}</a>
+            <a href={links[link]} target="_blank">{link}</a>
           </li>
         ))}
       </ul>

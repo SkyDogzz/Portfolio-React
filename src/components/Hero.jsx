@@ -10,6 +10,7 @@ const StyledHero = styled.div`
   align-items: center;
   background: var(--background-color);
   padding: 0 var(--offset);
+  border-bottom: 1px solid var(--primary-color);
 
   .hero-content {
     h1 {
