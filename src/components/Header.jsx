@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import { BsLightningCharge as Lightning } from "react-icons/bs";
 
 const StyledHeader = styled.header`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--background-color);
+  background: var(--header-background-gradient);
+  shadow: 0 0 20px var(--header-background-gradient);
 
   .menu {
     display: flex;
@@ -24,7 +27,7 @@ const StyledHeader = styled.header`
           a {
             text-decoration: none;
             color: var(--primary-color);
-            font-weight: 600;
+            font-weight: 300;
 
             &:hover {
                 text-decoration: underline;
@@ -67,5 +70,5 @@ export default function Header() {
 }
 
 function ThemeSwitcher() {
-  return <p>Theme switch</p>;
+  return <Lightning size="1.2rem" />;
 }
