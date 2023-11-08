@@ -10,7 +10,6 @@ const StyledHero = styled.div`
   align-items: center;
   background: var(--background-color);
   padding: 0 var(--offset);
-  border-bottom: 1px solid var(--primary-color);
 
   .hero-content {
     h1 {
@@ -83,7 +82,9 @@ export default function Hero() {
       <div className="hero-content">
         <h1>Hi, I'm SkyDogzz.</h1>
         <p>
-          I'm a full-stack web developer with a passion <br /> for learning and building things.
+          I'm a full-stack web developer with a <br /> 
+          passion for learning and building things <br />
+          based in Paris, France.
         </p>
       </div>
     </StyledHero>

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const works = {
-  "Portfolio": {
+  Portfolio: {
     description: "This portfolio",
     link: "/#",
     photo: "/images/portfolio.png",
   },
-  "SkyDogzz": {
+  SkyDogzz: {
     description: "A website for a fictive company",
     link: "/#",
     photo: "/images/portfolio.png",
@@ -23,6 +23,17 @@ const works = {
   },
 };
 
+const services = [
+  {
+    "Title": "Web Development",
+    "Description": "I can build you a website from scratch or use a CMS like Wordpress.",
+  },
+  {
+    "Title": "Web Development",
+    "Description": "I can build you a website from scratch or use a CMS like Wordpress.",
+  }
+]
+
 const StyledWorks = styled.div`
   padding: 1rem var(--offset);
   background: var(--background-color);
@@ -36,8 +47,7 @@ const StyledWorks = styled.div`
     justify-content: space-between;
 
     li {
-      margin-left: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       width: 45%;
 
       &:first-child {
@@ -67,18 +77,35 @@ const StyledWorks = styled.div`
             transform: scale(1.1);
           }
         }
+      }h3 {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--primary-color);
       }
+
+        p {
+          font-size: 1rem;
+          font-weight: 300;
+          color: var(--primary-color);
+        }
     }
   }
 `;
 
+
 export default function Works() {
   return (
-    <StyledWorks className="Works">
+    <StyledWorks className="Works" id="works">
       <h1>Works</h1>
       <ul>
         {Object.keys(works).map((work, index) => (
           <Work key={index} info={work} />
+        ))}
+      </ul>
+      <h2>Services</h2>
+      <ul>
+        {services.map((service, index) => (
+          <Service key={index} info={service} />
         ))}
       </ul>
     </StyledWorks>
@@ -97,4 +124,11 @@ function Work(props) {
       </a>
     </li>
   );
+}
+
+function Service(props) {
+  return <li>
+    <h3>{props.info.Title}</h3>
+    <p>{props.info.Description}</p>
+  </li>;
 }

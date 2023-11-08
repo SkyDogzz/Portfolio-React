@@ -41,10 +41,10 @@ const StyledHeader = styled.header`
 `;
 
 const links = {
-  Home: "#top",
+  Work: "#works",
   About: "#about",
-  Contact: "#contact",
-  Resume: "#Resume",
+  Resume: "#resume",
+  Contact: "mailto:thomas.stephan@live.fr",
 };
 
 export default function Header() {
