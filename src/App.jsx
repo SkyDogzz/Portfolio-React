@@ -62,7 +62,7 @@ function App() {
     document.addEventListener("mouseleave", handleMouseLeave);
 
     // Ajoutez ici tous les éléments cliquables.
-    const clickableElements = document.querySelectorAll("a, button, input, textarea");
+    const clickableElements = document.querySelectorAll("a, button, input, textarea, .logo");
     clickableElements.forEach((el) => {
       el.addEventListener("mouseover", handleMouseOverClickable);
       el.addEventListener("mouseout", handleMouseOutClickable);

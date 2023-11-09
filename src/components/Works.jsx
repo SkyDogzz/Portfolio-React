@@ -25,18 +25,43 @@ const works = {
 
 const services = [
   {
-    "Title": "Web Development",
-    "Description": "I can build you a website from scratch or use a CMS like Wordpress.",
+    Title: "Web Development",
+    Description: "I can build you a website from scratch or use a CMS like Wordpress.",
   },
   {
-    "Title": "Web Development",
-    "Description": "I can build you a website from scratch or use a CMS like Wordpress.",
-  }
-]
+    Title: "Web Development",
+    Description: "I can build you a website from scratch or use a CMS like Wordpress.",
+  },
+  {
+    Title: "Web Development",
+    Description: "I can build you a website from scratch or use a CMS like Wordpress.",
+  },
+  {
+    Title: "Web Development",
+    Description: "I can build you a website from scratch or use a CMS like Wordpress.",
+  },
+];
 
 const StyledWorks = styled.div`
   padding: 1rem var(--offset);
   background: var(--background-color);
+
+  h1,
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  .service {
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      scale: 1.2;
+      background: var(--background-color-light);
+    }
+  }
 
   ul {
     display: flex;
@@ -60,8 +85,6 @@ const StyledWorks = styled.div`
         font-weight: 300;
 
         .img-container {
-          width: 30rem;
-          height: 30rem;
           overflow: hidden;
           border-radius: 2rem;
           margin-bottom: 1rem;
@@ -77,21 +100,21 @@ const StyledWorks = styled.div`
             transform: scale(1.1);
           }
         }
-      }h3 {
+      }
+      h3 {
         font-size: 1.5rem;
         font-weight: 300;
         color: var(--primary-color);
       }
 
-        p {
-          font-size: 1rem;
-          font-weight: 300;
-          color: var(--primary-color);
-        }
+      p {
+        font-size: 1rem;
+        font-weight: 300;
+        color: var(--primary-color);
+      }
     }
   }
 `;
-
 
 export default function Works() {
   return (
@@ -127,8 +150,10 @@ function Work(props) {
 }
 
 function Service(props) {
-  return <li>
-    <h3>{props.info.Title}</h3>
-    <p>{props.info.Description}</p>
-  </li>;
+  return (
+    <li className="service">
+      <h3>{props.info.Title}</h3>
+      <p>{props.info.Description}</p>
+    </li>
+  );
 }
