@@ -25,21 +25,29 @@ const works = {
 
 const services = [
   {
-    Title: "Web Development",
-    Description: "I can build you a website from scratch or use a CMS like Wordpress.",
+    Title: "ReactJS Custom Development",
+    Description: "Crafting tailored ReactJS solutions to bring your unique ideas to life with clean, efficient, and scalable code.",
   },
   {
-    Title: "Web Development",
-    Description: "I can build you a website from scratch or use a CMS like Wordpress.",
+    Title: "ReactJS UI/UX Design",
+    Description: "Designing intuitive and dynamic user interfaces with ReactJS that provide seamless user experiences across all devices.",
   },
   {
-    Title: "Web Development",
-    Description: "I can build you a website from scratch or use a CMS like Wordpress.",
+    Title: "React Single Page Applications (SPA)",
+    Description: "Building fast and responsive single-page applications with ReactJS that offer users a smooth and cohesive online journey.",
   },
   {
-    Title: "Web Development",
-    Description: "I can build you a website from scratch or use a CMS like Wordpress.",
+    Title: "ReactJS Plugin Development",
+    Description: "Developing custom ReactJS plugins to extend the functionality of your web applications, ensuring compatibility and performance.",
   },
+  {
+    Title: "ReactJS Code Audit & Optimization",
+    Description: "Conducting thorough code reviews and optimization to enhance the performance and maintainability of your ReactJS projects.",
+  },
+  {
+    Title: "ReactJS Support & Maintenance",
+    Description: "Providing ongoing support and maintenance services to keep your ReactJS applications up-to-date and running smoothly.",
+  }
 ];
 
 const StyledWorks = styled.div`
