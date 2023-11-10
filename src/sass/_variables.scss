@@ -1,13 +1,23 @@
 $background-color: #0e0012;
 $background-color-light: #86748f;
 $primary-color: #ffffff;
-$header-background-gradient: linear-gradient(90deg, rgba(30,0,45,1) 0%, rgba(79,9,121,1) 35%, rgba(166,0,255,1) 63%, rgba(0,123,255,1) 100%);
+$header-background-gradient: linear-gradient(90deg, rgba(30, 0, 45, 1) 0%, rgba(79, 9, 121, 1) 35%, rgba(166, 0, 255, 1) 63%, rgba(0, 123, 255, 1) 100%);
 $offset: 15rem;
 
-:root{
-    --header-background-gradient: linear-gradient(90deg, rgba(30,0,45,1) 0%, rgba(79,9,121,1) 35%, rgba(166,0,255,1) 63%, rgba(0,123,255,1) 100%);
+:root {
+    --offset: 15rem;
+}
+
+div.App.dark-theme {
+    --primary-color: #ffffff;
+    --header-background-gradient: linear-gradient(90deg, rgba(30, 0, 45, 1) 0%, rgba(79, 9, 121, 1) 35%, rgba(166, 0, 255, 1) 63%, rgba(0, 123, 255, 1) 100%);
     --background-color: #0e0012;
     --background-color-light: #86748f;
-    --primary-color: #ffffff;
-    --offset: 15rem;
+}
+
+div.App.light-theme {
+    --primary-color: #000000;
+    --header-background-gradient: linear-gradient(90deg, rgb(0, 123, 255, 1) 0%, rgba(79, 9, 121, 1) 35%, rgba(166, 0, 255, 1) 63%, rgba(0, 123, 255, 1) 100%);
+    --background-color: #86748f;
+    --background-color-light: #b5a2be;
 }

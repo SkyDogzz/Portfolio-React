@@ -10,6 +10,14 @@ const StyledHeader = styled.header`
   background: var(--header-background-gradient);
   shadow: 0 0 20px var(--header-background-gradient);
 
+  .logo{
+    color: var(--primary-color);
+  }
+
+  svg {
+    color: var(--primary-color);
+  }
+
   .menu {
     display: flex;
     align-items: center;
@@ -43,11 +51,11 @@ const StyledHeader = styled.header`
 const links = {
   Work: "#works",
   About: "#about",
-  Resume: "#resume",
+  Resume: "/pdf/Resume.pdf",
   Contact: "mailto:thomas.stephan@live.fr",
 };
 
-export default function Header() {
+export default function Header({ setTheme }) {
   return (
     <StyledHeader>
       <div className="logo">
@@ -63,12 +71,16 @@ export default function Header() {
             ))}
           </ul>
         </nav>
-        <ThemeSwitcher />
+        <ThemeSwitcher setTheme={setTheme} />
       </div>
     </StyledHeader>
   );
 }
 
-function ThemeSwitcher() {
-  return <Lightning size="1.2rem" />;
+function ThemeSwitcher({ setTheme }) {
+  const changeTheme = () => {
+    setTheme((theme) => (theme === "dark" ? "light" : "dark"));
+  };
+
+  return <Lightning size="1.2rem" onClick={changeTheme} />;
 }

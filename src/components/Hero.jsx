@@ -52,7 +52,7 @@ export default function Hero() {
       // Créez une nouvelle étincelle
       const colors = ["#f8b500", "#f6416c", "#00ff00"];
       const newSparkle = {
-        id: Date.now(),
+        id: Date.now() + Math.random() * 1000,
         x: posX,
         y: posY,
         color: colors[Math.floor(Math.random() * colors.length)],
@@ -67,13 +67,23 @@ export default function Hero() {
       }, 1000);
     };
 
+    // Si les étincelles ne sont plus dans la liste mais toujours dans le DOM, supprimez-les
+    const sparklesInDom = document.querySelectorAll(".sparkle");
+    sparklesInDom.forEach((sparkle) => {
+      console.log(sparkle);
+      const sparkleId = parseInt(sparkle.id);
+      if (!sparkles.some((s) => s.id === sparkleId)) {
+        sparkle.remove();
+      }
+    });
+
     const heroElement = heroRef.current;
     heroElement.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       heroElement.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [sparkles]);
 
   return (
     <StyledHero className="hero" ref={heroRef}>

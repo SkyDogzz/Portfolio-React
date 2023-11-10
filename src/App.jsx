@@ -33,6 +33,7 @@ const StyledApp = styled.div`
 `;
 
 function App() {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   const [cursorXY, setCursorXY] = useState({
     x: -100,
     y: -100,
@@ -78,7 +79,7 @@ function App() {
   }, []);
 
   return (
-    <StyledApp className="App">
+    <StyledApp className={`App ${theme}-theme`}>
       <div
         className={`custom-cursor ${cursorSize} ${cursorVisible ? "" : "hide"}`}
         style={{
@@ -86,7 +87,7 @@ function App() {
           top: `${cursorXY.y}px`,
         }}
       />
-      <Header />
+      <Header setTheme={setTheme}/>
       <Main />
     </StyledApp>
   );
