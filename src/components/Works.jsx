@@ -122,6 +122,14 @@ const StyledWorks = styled.div`
       }
     }
   }
+
+  @media (max-width: 1024px) { 
+    ul {
+      li {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export default function Works() {

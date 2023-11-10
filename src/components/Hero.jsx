@@ -25,6 +25,18 @@ const StyledHero = styled.div`
     }
   }
   overflow: hidden; // Empêche les étincelles de déborder
+
+  @media (max-width: 1024px) {
+    height: 80vh;
+    .hero-content {
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
 `;
 
 const Sparkle = styled.div`

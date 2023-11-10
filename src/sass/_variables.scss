@@ -21,3 +21,9 @@ div.App.light-theme {
     --background-color: #86748f;
     --background-color-light: #b5a2be;
 }
+
+@media (max-width: 768px) {
+    :root {
+        --offset: 1rem;
+    }
+}

@@ -3,8 +3,9 @@ import styled from "styled-components";
 const StyledAbout = styled.div`
   background: var(--background-color);
   padding: 1rem var(--offset);
+  color: var(--primary-color);
 
-  h1{
+  h1 {
     margin-bottom: 2rem;
   }
 
@@ -14,6 +15,12 @@ const StyledAbout = styled.div`
     line-height: 1.5;
 
     max-width: 60%;
+  }
+
+  @media (max-width: 1024px) {
+    p {
+      max-width: 100%;
+    }
   }
 `;
 

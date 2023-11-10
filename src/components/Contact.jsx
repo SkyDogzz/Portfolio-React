@@ -3,6 +3,7 @@ import styled from "styled-components";
 const StyledContact = styled.div`
   background: var(--background-color);
   padding: 1rem var(--offset);
+  color: var(--primary-color);
 
   h1 {
     margin-top: 5rem;
@@ -23,6 +24,18 @@ const StyledContact = styled.div`
     &:hover {
       scale: 1.2;
       background: var(--background-color-light);
+    }
+  }
+
+  @media (max-width: 1440px) {
+    p {
+      font-size: 6rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    p {
+      font-size: 4rem;
     }
   }
 `;
