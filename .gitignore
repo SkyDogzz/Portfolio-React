@@ -3,3 +3,6 @@
 
 # prettier config
 /.prettierrc
+
+#ignore build
+/build
