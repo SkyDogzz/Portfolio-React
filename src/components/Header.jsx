@@ -51,7 +51,7 @@ const StyledHeader = styled.header`
 const links = {
   Work: "#works",
   About: "#about",
-  Resume: "/pdf/Resume.pdf",
+  Resume: "/pdf/resume.pdf",
   Contact: "mailto:thomas.stephan@live.fr",
 };
 

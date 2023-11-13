@@ -1,23 +1,8 @@
 import styled from "styled-components";
 
 const works = {
-  Portfolio: {
-    description: "This portfolio",
-    link: "/#",
-    photo: "/images/portfolio.png",
-  },
-  SkyDogzz: {
-    description: "A website for a fictive company",
-    link: "/#",
-    photo: "/images/portfolio.png",
-  },
-  "SkyDogzz ": {
-    description: "A website for a fictive company",
-    link: "/#",
-    photo: "/images/portfolio.png",
-  },
-  "SkyDogzz  ": {
-    description: "A website for a fictive company",
+  "This portfolio": {
+    description: "This is my portfolio website. It is built with ReactJS and styled-components.",
     link: "/#",
     photo: "/images/portfolio.png",
   },
