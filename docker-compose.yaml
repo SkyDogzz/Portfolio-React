@@ -10,6 +10,7 @@ services:
     - "traefik.enable=true"
     - "traefik.http.routers.portfolio.rule=Host(`tstephan.fr`)"
     - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
+  restart: unless-stopped
   traefik:
     image: traefik:v2.6
     container_name: traefik
@@ -23,6 +24,7 @@ services:
       - ./certs:/certs
     networks:
       - web
+    restart: unless-stopped
 
 networks:
   web:
