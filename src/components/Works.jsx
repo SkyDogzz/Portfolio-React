@@ -6,6 +6,11 @@ const works = {
     link: "/#",
     photo: "/images/portfolio.png",
   },
+  Sphere: {
+    description: "Sphere is a website using ReactJS and a weather API to display current weather, air quality, temperature by hour, and forecast.",
+    link: "http://sphere.tstephan.fr",
+    photo: "/images/sphere.png",
+  },
 };
 
 const services = [
@@ -32,7 +37,7 @@ const services = [
   {
     Title: "ReactJS Support & Maintenance",
     Description: "Providing ongoing support and maintenance services to keep your ReactJS applications up-to-date and running smoothly.",
-  }
+  },
 ];
 
 const StyledWorks = styled.div`
@@ -108,7 +113,7 @@ const StyledWorks = styled.div`
     }
   }
 
-  @media (max-width: 1024px) { 
+  @media (max-width: 1024px) {
     ul {
       li {
         width: 100%;
