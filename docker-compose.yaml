@@ -10,14 +10,22 @@ services:
     - "traefik.enable=true"
     - "traefik.http.routers.portfolio.rule=Host(`tstephan.fr`)"
     - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
-  restart: unless-stopped
+    restart: unless-stopped
   traefik:
     image: traefik:v2.6
     container_name: traefik
-    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
+    command:
+      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+    labels:
+      - "traefik.http.routers.traefik.rule=Host(`traefik.yourdomain.com`)"
+      - "traefik.http.routers.traefik.service=api@internal"
+      - "traefik.http.routers.traefik.entrypoints=websecure"
+      - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik.yml:/traefik.yml:ro
