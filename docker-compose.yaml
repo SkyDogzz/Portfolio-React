@@ -1,6 +1,29 @@
-version: '3'
+version: '3.8'
 services:
-  web:
+  portfolio:
     build: .
     ports:
-      - "80:3000"
+      - "81:3000"
+    networks:
+      - web
+    labels:
+    - "traefik.enable=true"
+    - "traefik.http.routers.portfolio.rule=Host(`tstephan.fr`)"
+    - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
+  traefik:
+    image: traefik:v2.6
+    container_name: traefik
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.yml:/traefik.yml:ro
+      - ./certs:/certs
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
