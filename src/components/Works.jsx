@@ -86,6 +86,9 @@ const StyledWorks = styled.div`
           overflow: hidden;
           border-radius: 2rem;
           margin-bottom: 1rem;
+          width: 100%;
+          position: relative;
+          padding-top: 100%;
         }
 
         img {
@@ -93,6 +96,11 @@ const StyledWorks = styled.div`
           height: 100%;
           object-fit: cover;
           transition: transform 0.2s ease-in-out;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
 
           &:hover {
             transform: scale(1.1);
