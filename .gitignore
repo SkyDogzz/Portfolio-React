@@ -6,3 +6,6 @@
 
 #ignore build
 /build
+
+#ignore letsencrypt
+/letsencrypt

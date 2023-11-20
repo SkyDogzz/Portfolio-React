@@ -7,29 +7,29 @@ services:
     networks:
       - web
     labels:
-    - "traefik.enable=true"
-    - "traefik.http.routers.portfolio.rule=Host(`tstephan.fr`)"
-    - "traefik.http.services.portfolio.loadbalancer.server.port=3000"
+      - "traefik.enable=true"
+      - "traefik.http.routers.whoami.rule=Host(`tstephan.fr`)"
+      - "traefik.http.routers.whoami.entrypoints=websecure"
+      - "traefik.http.routers.whoami.tls.certresolver=myresolver"
     restart: unless-stopped
+
   traefik:
-    image: traefik:v2.6
-    container_name: traefik
-    ports:
-      - "80:80"
-      - "443:443"
+    image: "traefik:v2.10"
+    container_name: "traefik"
     command:
-      - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
-      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
-      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
-    labels:
-      - "traefik.http.routers.traefik.rule=Host(`traefik.yourdomain.com`)"
-      - "traefik.http.routers.traefik.service=api@internal"
-      - "traefik.http.routers.traefik.entrypoints=websecure"
-      - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"
+      - "--certificatesresolvers.myresolver.acme.email=thomas.stephan@live.fr"
+      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "443:443"
+      - "8080:8080"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./traefik.yml:/traefik.yml:ro
-      - ./certs:/certs
+      - "./letsencrypt:/letsencrypt"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
     networks:
       - web
     restart: unless-stopped
