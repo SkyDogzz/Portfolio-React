@@ -8,7 +8,7 @@ const works = {
   },
   Sphere: {
     description: "Sphere is a website using ReactJS and a weather API to display current weather, air quality, temperature by hour, and forecast.",
-    link: "http://sphere.tstephan.fr",
+    link: "https://sphere.tstephan.fr",
     photo: "/images/sphere.png",
   },
 };
